@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="Deployment\DeploymentController.cs" />
     <Compile Include="Editor\FilesController.cs" />
+    <Compile Include="GitServer\GitHubHookService.cs" />
     <Compile Include="GitServer\Helpers.cs" />
     <Compile Include="GitServer\InfoRefsController.cs" />
     <Compile Include="GitServer\ReceivePackHandler.cs" />

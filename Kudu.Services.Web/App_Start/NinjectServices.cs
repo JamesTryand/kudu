@@ -178,6 +178,8 @@ namespace Kudu.Services.Web.App_Start
             // Push url
             routes.MapHandler<ReceivePackHandler>(kernel, "git-receive-pack", configuration.GitServerRoot + "/git-receive-pack");
 
+            routes.MapHandler<GitHubHookService>(kernel, "githubhook", "githubhook");
+
             // Clone url
             routes.MapHttpRoute("git-upload-pack", configuration.GitServerRoot + "/git-upload-pack ", new { controller = "Rpc", action = "UploadPack" });
 

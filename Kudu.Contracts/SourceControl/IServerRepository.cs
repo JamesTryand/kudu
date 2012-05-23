@@ -9,5 +9,6 @@ namespace Kudu.Core.SourceControl
         ChangeSet Initialize(RepositoryConfiguration configuration, string path);
         RepositoryType GetRepositoryType();
         void Clean();
+        void Pull(string remote);
     }
 }

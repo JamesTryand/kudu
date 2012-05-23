@@ -20,5 +20,6 @@ namespace Kudu.Core.SourceControl
         void Update(string id);
         void Update();
         void Push();
+        void Pull(string remote);
     }
 }

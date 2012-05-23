@@ -57,6 +57,11 @@ namespace Kudu.Core.SourceControl.Git
             _repository.Clean();
         }
 
+        public void Pull(string remote)
+        {
+            _repository.Pull(remote);
+        }
+
         public bool Exists
         {
             get

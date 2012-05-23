@@ -115,5 +115,10 @@ namespace Kudu.Client.SourceControl
                    .Result
                    .EnsureSuccessStatusCode();
         }
+
+        public void Pull(string remote)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

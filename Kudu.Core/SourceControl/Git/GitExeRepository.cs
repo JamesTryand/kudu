@@ -172,6 +172,11 @@ namespace Kudu.Core.SourceControl.Git
             _gitExe.Execute(@"push origin master");
         }
 
+        public void Pull(string remote)
+        {
+            _gitExe.Execute(@"pull --ff-only ""{0}""", remote);
+        }
+
         public void Update(string id)
         {
             ITracer tracer = _tracerFactory.GetTracer();
@@ -755,6 +760,6 @@ namespace Kudu.Core.SourceControl.Git
                 reader.Skip("@@");
                 return range;
             }
-        }        
+        }
     }
 }

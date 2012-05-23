@@ -94,5 +94,9 @@ namespace Kudu.Core.SourceControl
         {
             
         }
+
+        public void Pull(string remote)
+        {
+        }
     }
 }
