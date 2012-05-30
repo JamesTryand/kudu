@@ -174,7 +174,16 @@ namespace Kudu.Core.SourceControl.Git
 
         public void Pull(string remote)
         {
-            _gitExe.Execute(@"pull --ff-only ""{0}""", remote);
+            // REVIEW: TEMPORARY: we should not hard code github here obviously
+            try
+            {
+                _gitExe.Execute(@"remote rm github");
+            }
+            catch { }
+            _gitExe.Execute(@"remote add github ""{0}""", remote);
+            _gitExe.Execute(@"fetch github");
+            Update();
+            _gitExe.Execute(@"reset --hard github/master");
         }
 
         public void Update(string id)
